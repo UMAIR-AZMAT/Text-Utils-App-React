@@ -3,14 +3,20 @@ import { useState } from "react";
 
 export default function TextForm(props) {
   const handleUpClick = () => {
-    console.log("Upper Case was Clicked " + " " + text);
+    // console.log("Upper Case was Clicked " + " " + text);
     let newText = text.toUpperCase();
     setText(newText);
   };
 
   const handlelowClick = () => {
-    console.log("Upper Case was Clicked " + " " + text);
+    // console.log("Lower Case was Clicked " + " " + text);
     let newText = text.toLowerCase();
+    setText(newText);
+  };
+
+  const handleResetClick = () => {
+    // console.log("Reset Text Case was Clicked " + " " + text);
+    let newText = "";
     setText(newText);
   };
 
@@ -23,7 +29,7 @@ export default function TextForm(props) {
     <>
       <div className="container">
         <div className="form-group">
-          <h1>{props.heading}</h1>
+          <h3>{props.heading}</h3>
           <textarea
             value={text}
             onChange={handleOnChange}
@@ -46,6 +52,13 @@ export default function TextForm(props) {
             onClick={handlelowClick}
           >
             Convert to Lower Case
+          </button>
+          <button
+            type="button"
+            className="btn btn-danger my-2 mx-2"
+            onClick={handleResetClick}
+          >
+            Reset Text
           </button>
         </div>
       </div>
