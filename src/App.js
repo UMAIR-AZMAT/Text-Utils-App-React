@@ -5,7 +5,6 @@ function App() {
   return (
     <div className="App">
       <Navbar title="Text-utils-App" about="About this App" />
-      {/* <Navbar /> */}
     </div>
   );
 }
